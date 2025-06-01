@@ -56,7 +56,7 @@
     <header role="banner" class="oj-web-applayout-header">
       <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
         <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-          <img class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></img> 
+          <img class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo" />
           <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name">
             <oj-bind-text value="[[appName]]"></oj-bind-text>
           </h1>
@@ -104,6 +104,40 @@
       &nbsp;&nbsp;
       <oj-button id='Convertir' class='oj-button-confirm buttonfull'
       on-oj-action="[[actionConvertir]]">Convertir</oj-button>
+      <br><br>
+<oj-collapsible id="c1">
+  <h4 slot="header">Conversión Avanzada</h4>
+  <div>
+    <oj-form-layout label-edge="top" max-columns="[[columns]]" direction="row" id="fl2">
+      <div class="oj-flex-item oj-sm-margin-2x">
+        <oj-label for="cbx_de" class="fontDefault">De</oj-label>
+        <oj-select-one id="cbx_de" options="{{cbx_monedas}}" value="{{cbx_de}}"></oj-select-one>
+      </div>
+      <div class="oj-flex-item oj-sm-margin-2x">
+        <oj-label for="cbx_a" class="fontDefault">A</oj-label>
+        <oj-select-one id="cbx_a" options="{{cbx_monedas}}" value="{{cbx_a}}"></oj-select-one>
+      </div>
+      <div class="oj-flex-item oj-sm-margin-2x">
+        <oj-label for="txt_importe2">Importe a convertir</oj-label>
+        <oj-input-text id="txt_importe2" value="{{var_importe2}}"></oj-input-text>
+      </div>
+      <div class="oj-flex-item oj-sm-margin-2x">
+        <oj-label for="lbl_resultado2">Resultado</oj-label>
+        <span id="lbl_resultado2" style="font-size: 18px; color:darkseagreen;" data-bind="text: var_resultado2"></span>
+      </div>
+    </oj-form-layout>
+    &nbsp;&nbsp;
+    <div class="oj-flex">
+      <div class="oj-sm-margin-2x">
+        <oj-button id='Intercambiar2' on-oj-action="[[actionIntercambiar]]">Intercambiar</oj-button>
+      </div>
+      <div class="oj-sm-margin-2x">
+        <oj-button id='Convertir2' class='oj-button-confirm buttonfull' on-oj-action="[[actionConvertir2]]">Convertir</oj-button>
+      </div>
+    </div>
+  </div>
+</oj-collapsible>
+
     </div>
     <footer class="oj-web-applayout-footer" role="contentinfo">
       <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
